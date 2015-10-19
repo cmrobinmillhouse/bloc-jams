@@ -10,9 +10,17 @@ var revealPoint = function (index) {
      points[index].style.WebkitTransform = "scaleX(1) translate(0)";
 };
                 
-    for (i = 0; i < points.length; i++){
-     revealPoint(i);   
-    }
+        /*for (i = 0; i < points.length; i++){
+         revealPoint(i);   
+        }*/
+        
+        forEach(points, function (index, value) {
+    
+            revealPoint(index);
+        });
+
+    
+    
 
 };
 
