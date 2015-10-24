@@ -1,5 +1,4 @@
 // Example Album
-
 var albumPicasso = {
     name: 'The Colors',
     artist: 'Pablo Picasso',
@@ -35,6 +34,27 @@ var albumMarconi = {
 
     ] 
 };
+
+//Yet Another Example Album
+
+var albumDarlingside = {
+    name: 'The Power Station',
+    artist: 'Darlingside',
+    label: 'EM',
+    year: '2014',
+    albumArtUrl: 'assets/images/album_covers/20.png',
+    songs: [
+    
+        {name: 'Ancestor', length: '1:01'},
+        {name: 'Whipporwill', length: '5:01'},
+        {name: 'flutter', length: '3:21'},
+        {name: 'God of loss', length: '2:15'},
+        {name: 'New Amsterdam', length: '2:15'}
+
+    ] 
+};
+
+var albumArray = [albumPicasso, albumMarconi, albumDarlingside];
 
 var createSongRow = function(songNumber, songName, songLength) {
     var template =
@@ -72,6 +92,60 @@ var setCurrentAlbum = function(album) {
  };
  
  window.onload = function() {
-     setCurrentAlbum(albumPicasso);
+     
+     /*window.addEventListener("scroll", function(event) {
+         console.log(event);
+         console.log("Current offset from the top is " + sellingPoints.getBoundingClientRect().top + " pixels");
+     }); 
+     
+         <img id="myButton" src="http://www.gratuit-en-ligne.com/telecharger-gratuit-en-ligne/telecharger-image-wallpaper-gratuit/image-wallpaper-animaux/img/images/image-wallpaper-animaux-chatons.jpg" />
+        <script type="text/javascript">
+        
+            var images = [
+                    'http://www.online-image-editor.com/styles/2013/images/example_image.png',
+                    'http://www.gratuit-en-ligne.com/telecharger-gratuit-en-ligne/telecharger-image-wallpaper-gratuit/image-wallpaper-animaux/img/images/image-wallpaper-animaux-chatons.jpg',
+                    'http://www.gratuit-en-ligne.com/telecharger-gratuit-en-ligne/telecharger-image-wallpaper-gratuit/image-wallpaper-animaux/img/images/image-wallpaper-animaux-autruche.jpg'
+                ],
+                
+                var albumArray = [albumPicasso, albumMarconi, albumDarlingside];// mine
+                
+                i = 1;//mine
+                
+                for (var j = albumArray.length; j--;) { // mine
+                var img = new Image;
+                img.src = albumArray[j];
+                }
+                
+                document.getElementsByClassName('album-cover-art').addEventListener('click', function() { // mine
+                this.src = albumArray[i >= albumArray.length - 1 ? i = 0 : ++i];
+            }, false);
+                
+                i = 1;
+            
+            for (var j=images.length; j--;) {
+                var img = new Image();
+                img.src = images[j];
+            }
+
+            document.getElementById('myButton').addEventListener('click', function() {
+                this.src = images[i >= images.length - 1 ? i = 0 : ++i];
+            }, false);*/
+     
+                i = 1;//mine
+                
+                /*for (i = 0; var i = albumArray.length; i++;) { // mine
+                var img = new Image;
+                img.src = albumArray[i];
+                }*/
+                
+                var albumImage = document.getElementsByClassName('album-cover-art')[0];
+                
+                albumImage.addEventListener( 'click', function(event) { // mine
+                this.src = albumArray[i >= albumArray.length - 1 ? i = 0 : ++i];
+            }, false);
+     
+    //setCurrentAlbum(albumPicasso);
  };
     
+/*Create a third album object in album.js. Populate the object with the same properties as the other two album objects, but provide values of your choosing.
+Add an event listener to the album cover. When a user clicks it, the album page content should toggle between the three album objects: albumPicasso, albumMarconi, and your album object.*/
