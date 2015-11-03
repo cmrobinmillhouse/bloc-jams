@@ -136,16 +136,37 @@ var setCurrentAlbum = function(album) {
                 /*for (i = 0; var i = albumArray.length; i++;) { // mine
                 var img = new Image;
                 img.src = albumArray[i];
-                }*/
+                }
+                
+                                    
+                    // this.src = albumArray[i >= albumArray.length - 1 ? i = 0 : ++i];
+                
+                */
                 
                 var albumImage = document.getElementsByClassName('album-cover-art')[0];
                 
-                albumImage.addEventListener( 'click', function(event) { // mine
-                this.src = albumArray[i >= albumArray.length - 1 ? i = 0 : ++i];
-            }, false);
+                var albumIndex = 0;           
      
-    //setCurrentAlbum(albumPicasso);
+                albumImage.addEventListener( 'click', function(event) { // mine
+                    albumIndex++;
+                    console.log(albumIndex);
+                    
+                    if (albumIndex >= albumArray.length) {
+                        albumIndex = 0;
+                        console.log(albumIndex + "loop");
+                    }
+                    
+                    setCurrentAlbum(albumArray[albumIndex]);
+                    
+                    // set the album to the next album index
+                    // if the next album index is greater than the number of albums, reset to 0
+                    
+                }, false);
+     
+    setCurrentAlbum(albumPicasso);
  };
     
-/*Create a third album object in album.js. Populate the object with the same properties as the other two album objects, but provide values of your choosing.
+/*
+
+Create a third album object in album.js. Populate the object with the same properties as the other two album objects, but provide values of your choosing.
 Add an event listener to the album cover. When a user clicks it, the album page content should toggle between the three album objects: albumPicasso, albumMarconi, and your album object.*/
